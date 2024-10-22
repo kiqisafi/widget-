@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Statistik Kunjungan</title>
+    
+    <!-- Kode Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7THNLDPDVK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7THNLDPDVK'); // Ganti G-XXXXXXXXXX dengan Measurement ID Anda
+    </script>
+    
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="icon" id="infoIcon" onclick="toggleWidget()">
+        <img src="blangkon_2.png" alt="Icon" class="icon-image">
+    </div>
+    <div class="widget" id="infoWidget">
+        <div class="close-btn" onclick="closeWidget()">
+            <span>X</span>
+        </div>
+        <div class="widget-header">
+            Perhitungan jumlah kunjungan website
+            <p class="widget-description">Teks deskripsi di sini menjelaskan informasi lebih lanjut tentang statistik kunjungan.</p>
+        </div>
+
+        <div class="stat visitor">
+            <p>👤 Total Visitor:</p>
+            <p><strong id="totalVisitor">0</strong></p>
+        </div>
+        <div class="stat online">
+            <p>🟢 Online:</p>
+            <p><strong id="onlineCount">0</strong></p>
+        </div>
+        <div class="stat view">
+            <p>📊 Total View:</p>
+            <p><strong id="totalView">0</strong></p>
+        </div>
+        <div class="stat extra">
+            <p>📅 Kunjungan Hari Ini:</p>
+            <p><strong id="todayVisits">0</strong></p>
+        </div>
+        <div class="stat extra">
+            <p>🌍 Pengunjung Unik:</p>
+            <p><strong id="uniqueVisitors">0</strong></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

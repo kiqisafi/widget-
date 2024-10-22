@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+}
+
+.icon {
+    background-color: red; /* Warna latar belakang merah */
+    border-radius: 50%; /* Membuat lingkaran */
+    width: 80px; /* Ukuran lingkaran */
+    height: 80px; /* Ukuran lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.icon-image {
+    width: 70%; /* Mengatur lebar gambar dalam lingkaran */
+    height: auto; /* Biarkan tinggi otomatis untuk menjaga proporsi */
+    border-radius: 50%; /* Membuat gambar bulat */
+}
+
+.widget {
+    background-color: white; /* Warna latar widget */
+    border-radius: 8px; /* Sudut melengkung */
+    width: 300px; /* Lebar widget */
+    color: #333; /* Warna teks */
+    padding: 40px 20px 20px; /* Tambahkan padding atas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
+    position: absolute; /* Posisi absolut */
+    top: 50%; /* Pusatkan vertikal */
+    left: 0; /* Tempatkan di sisi kiri */
+    transform: translateY(-50%); /* Pindahkan ke tengah vertikal */
+    display: none; /* Tersembunyi secara default */
+    max-height: 400px; /* Batas tinggi maksimum */
+    overflow-y: auto; /* Mengaktifkan scroll jika konten lebih */
+}
+
+.widget-header {
+    font-size: 20px; /* Ukuran font untuk judul */
+    text-align: center; /* Pusatkan teks */
+    color: #007bff; /* Warna judul */
+    margin-top: 30px; /* Jarak atas judul */
+    margin-bottom: 10px; /* Jarak bawah judul */
+    padding: 15px; /* Padding untuk judul */
+    background-color: #e0f7fa; /* Warna latar belakang judul */
+    border-radius: 5px; /* Sudut melengkung untuk judul */
+}
+
+.widget-description {
+    font-size: 14px; /* Ukuran font untuk deskripsi */
+    color: #666; /* Warna teks */
+    text-align: center; /* Pusatkan teks */
+    margin-top: 5px; /* Jarak atas untuk memberikan ruang dari judul */
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn span {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stat {
+    background-color: #e0f7fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .widget {
+        width: 90%; /* Lebar widget 90% untuk layar kecil */
+        padding: 30px 15px; /* Padding lebih kecil */
+    }
+
+    .icon {
+        width: 60px; /* Ukuran ikon lebih kecil */
+        height: 60px; /* Ukuran ikon lebih kecil */
+    }
+}
+
+/* Efek hover pada ikon */
+.icon:hover {
+    background-color: #ff4d4d; /* Ubah warna latar belakang saat hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Tambah bayangan saat hover */
+}
+
+/* Efek hover pada tombol close */
+.close-btn:hover {
+    background-color: #c0c0c0; /* Ubah warna latar belakang saat hover */
+}
+
+/* Gaya untuk statistik yang lebih jelas */
+.stat {
+    transition: background-color 0.3s; /* Transisi saat hover */
+}
+
+.stat:hover {
+    background-color: #b2ebf2; /* Ubah warna latar belakang saat hover */
+}
+
+/* Gaya untuk teks pengunjung */
+.stat strong {
+    color: #007bff; /* Ubah warna teks pengunjung */
+}
+
+/* Menambahkan efek bayangan pada widget */
+.widget {
+    transition: transform 0.3s; /* Transisi saat menampilkan */
+}
+
+/* Animasi saat widget muncul */
+.widget.show {
+    transform: translateY(-50%) scale(1.05); /* Tambah sedikit skala saat muncul */
+}
